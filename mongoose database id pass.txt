@@ -1,4 +1,0 @@
-mongoose database:
-
-ID:roshansp639
-PASS:Us2ivpsOun4II5u7
