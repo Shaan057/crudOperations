@@ -1,0 +1,37 @@
+.home-background {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width:768px){
+    .home-background {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+}
+
+.view-books-container{
+order: 1;
+}
+
+.view-books-button{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+}
+.books-image{
+    order: 0;
+    /* height: 100%; */
+    width: 30%;
+}
+
+@media screen and (min-width:768px) {
+  .view-books-container {
+      order: 0;
+    }
+    .books-image {
+      order: 1;
+    }
+}

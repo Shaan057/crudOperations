@@ -60,6 +60,35 @@ router.put("/updateBook/:id", async (req, res) => {
     }
 });
 
+//Patch Book
+
+router.patch("/updateBookDetails/:id", async (req, res) => {
+    const { id } = req.params;
+    // const { bookname, description, price, author, imageurl } = req.body;
+    const data = {};
+
+    for (let f in req.body) {
+        if (req.body[f] !== "") {
+            data[f] = req.body[f];
+        }
+    }
+
+    try {
+        const updatedBook = await bookModel.findByIdAndUpdate(id, data, {
+            new: true,
+        });
+
+        if (!updatedBook) {
+            return res.status(404).json({ error: "Book not found" });
+        }
+
+        res.status(200).json({ message: "Book Updated Successfully" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
 // Delete Book By Id
 
 router.delete("/deleteBook/:id", async (req, res) => {

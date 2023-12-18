@@ -1,0 +1,11 @@
+.addbooks-background {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width:768px) {
+    .addbooks-background {
+        align-items: center;
+    }
+}

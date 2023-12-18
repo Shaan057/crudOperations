@@ -1,0 +1,66 @@
+.book-item {
+  background-color: cornsilk;
+  width: 44%;
+  border-top-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+.book-image {
+  border-top-left-radius: 14px;
+  width: 100%;
+  height: 200px;
+}
+
+.book-title {
+  font-size: 15px;
+  margin: 3px;
+  font-weight: bold;
+}
+
+.book-author {
+  margin: 3px;
+  font-size: 12px;
+}
+
+.author-span {
+  font-weight: bold;
+}
+
+.book-description {
+  margin: 3px;
+  font-size: 10px;
+}
+
+.book-price {
+  margin: 3px;
+  font-size: 10px;
+}
+
+.buttons-container {
+}
+
+.update-delete-button {
+  font-size: 14px !important;
+  padding: 2px 4px;
+  font-size: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .book-item {
+    width: 22%;
+  }
+
+  .update-delete-button {
+    padding: 2px 8px;
+    font-size: 15px;
+  }
+}
+
+.books-label {
+  color: black;
+}
+
+.js-popup {
+  width: 90%;
+  height: 700px;
+}
