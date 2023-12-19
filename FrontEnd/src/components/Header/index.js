@@ -20,12 +20,20 @@ const Header = () => (
 
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav ml-auto">
-        <li className="nav-item">
+        <li
+          className="nav-item"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+        >
           <Link className="nav-link" to="/">
-            Home <span className="sr-only">(current)</span>
+            Home
           </Link>
         </li>
-        <li className="nav-item">
+        <li
+          className="nav-item"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+        >
           <Link className="nav-link" to="/books">
             Books
           </Link>
@@ -53,7 +61,11 @@ const Header = () => (
             </Link>
           </div>
         </li> */}
-        <li className="nav-item">
+        <li
+          className="nav-item"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+        >
           <Link className="nav-link" to="/addbooks">
             Add Books
           </Link>

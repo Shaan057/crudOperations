@@ -1,5 +1,5 @@
 import './index.css'
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import axios from 'axios'
 
 const apiStatusConstants = {
@@ -21,6 +21,7 @@ const AddBooks = () => {
   const [price, setPrice] = useState('')
   const [author, setAuthor] = useState('')
   const [imageurl, setImageurl] = useState('')
+  const [responseMsg, setResponseMsg] = useState('')
 
   // const {bookname, description, price, author, imageurl} = booksData
 
@@ -50,7 +51,7 @@ const AddBooks = () => {
       const bookData = {bookname, description, price, author, imageurl}
       const url = 'http://localhost:2000/api/v1/add'
       const response = await axios.post(url, bookData)
-      console.log(response.data.message)
+      setResponseMsg(response.data.message)
       setBookName('')
       setDescription('')
       setPrice('')
@@ -151,9 +152,12 @@ const AddBooks = () => {
             onChange={onChangeImageurl}
           />
         </div>
-        <button type="submit" className="btn btn-success">
-          Submit
-        </button>
+        <div className="d-flex align-items-center">
+          <button type="submit" className="btn btn-success">
+            Submit
+          </button>
+          <p className="ml-3 pt-3 text-success">{responseMsg}</p>
+        </div>
       </form>
     </div>
   )

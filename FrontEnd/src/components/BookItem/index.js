@@ -14,6 +14,9 @@ const BookItem = props => {
     onEditButtonClicked,
     onSubmitForm,
     bookUpdateStatus,
+    onCloseDeleteModal,
+    bookDeleteStatus,
+    onDeleteModalButtonClicked,
   } = props
 
   const onClickEditButton = () => {
@@ -22,8 +25,12 @@ const BookItem = props => {
 
   const {id, bookName, description, price, author, imageUrl} = data
 
-  const onClickDeleteBook = async () => {
-    onDeleteBook(id)
+  const onClickConfirmButton = async () => {
+    onDeleteBook()
+  }
+
+  const onDeleteButtonClicked = () => {
+    onDeleteModalButtonClicked(id)
   }
 
   const onSubmitClicked = event => {
@@ -45,7 +52,7 @@ const BookItem = props => {
       <div className="d-flex justify-content-between align-items-center p-1 mt-auto buttons-container">
         <button
           type="button"
-          className="btn btn-outline-success update-delete-button"
+          className="btn btn-outline-success update-delete-button edit-button"
           data-toggle="modal"
           data-target="#staticBackdrop"
           onClick={onClickEditButton}
@@ -175,13 +182,71 @@ const BookItem = props => {
             </div>
           </div>
         </div>
+
         <button
-          className="btn btn-danger update-delete-button"
           type="button"
-          onClick={onClickDeleteBook}
+          className="btn btn-danger update-delete-button"
+          data-toggle="modal"
+          data-target="#staticBackdrop1"
+          onClick={onDeleteButtonClicked}
         >
           Delete
         </button>
+
+        <div
+          className="modal fade"
+          id="staticBackdrop1"
+          data-backdrop="static"
+          data-keyboard="false"
+          tabIndex="-1"
+          aria-labelledby="staticBackdropLabel1"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="staticBackdropLabel1">
+                  Delete Book
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  onClick={() => onCloseDeleteModal()}
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body delete-modal">
+                {bookDeleteStatus ? (
+                  <p>{bookDeleteStatus}</p>
+                ) : (
+                  <>
+                    <p> Are you sure you want to delete this Book?</p>
+                    <button
+                      className="btn btn-danger pl-2 pr-2 confirm-button"
+                      type="button"
+                      onClick={onClickConfirmButton}
+                    >
+                      Confirm
+                    </button>
+                  </>
+                )}
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-dismiss="modal"
+                  onClick={() => onCloseDeleteModal()}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </li>
   )

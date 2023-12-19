@@ -24,6 +24,8 @@ const Book = () => {
   const [imageurl, setImageurl] = useState('')
   const [editId, setId] = useState(null)
   const [bookUpdateStatus, setBookUpdateStatus] = useState('')
+  const [bookDeleteStatus, setBookDeleteStatus] = useState('')
+  const [bookToBeDeletedId, setBookToBeDeletedId] = useState('')
 
   // const {bookname, description, price, author, imageurl} = booksData
 
@@ -78,6 +80,12 @@ const Book = () => {
     fetchData()
   }
 
+  const onCloseDeleteModal = () => {
+    setBookDeleteStatus('')
+    setBookToBeDeletedId('')
+    fetchData()
+  }
+
   const onSubmitForm = async data => {
     try {
       // const bookData = {bookname, description, price, author, imageurl}
@@ -95,12 +103,15 @@ const Book = () => {
     }
   }
 
-  const onDeleteBook = async id => {
-    setApiStatus(apiStatusConstants.inProgress)
+  const onDeleteModalButtonClicked = id => {
+    setBookToBeDeletedId(id)
+  }
+
+  const onDeleteBook = async () => {
     try {
-      const url = `http://localhost:2000/api/v1/deleteBook/${id}`
+      const url = `http://localhost:2000/api/v1/deleteBook/${bookToBeDeletedId}`
       const response = await axios.delete(url)
-      fetchData()
+      setBookDeleteStatus(response.data.message)
     } catch (error) {
       console.log(error)
     }
@@ -127,7 +138,7 @@ const Book = () => {
     </div>
   )
   const renderSuccessView = () => (
-    <ul className="books-list">
+    <ul className="books-list w-100">
       {booksList.map(each => (
         <BookItem
           key={each.id}
@@ -150,6 +161,9 @@ const Book = () => {
           onEditButtonClicked={onEditButtonClicked}
           onSubmitForm={onSubmitForm}
           bookUpdateStatus={bookUpdateStatus}
+          onDeleteModalButtonClicked={onDeleteModalButtonClicked}
+          onCloseDeleteModal={onCloseDeleteModal}
+          bookDeleteStatus={bookDeleteStatus}
         />
       ))}
     </ul>

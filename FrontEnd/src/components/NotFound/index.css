@@ -1,0 +1,40 @@
+.bg-not-found {
+  min-height: 100vh;
+  background-image: url('https://res.cloudinary.com/dx8csuvrh/image/upload/v1702989435/Movies%20App/Login%20Page/clay-banks-pNEmlb1CMZM-unsplash_mbxh7m.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.724);
+  backdrop-filter: blur(5px);
+  gap: 10px;
+}
+@media screen and (min-width: 768px) {
+  .card {
+    height: 300px;
+    width: 600px;
+  }
+}
+
+.not-found-para {
+  font-size: 25px;
+  font-weight: bold;
+}
+.not-found-button {
+  cursor: pointer;
+  border: none;
+  background-color: pink;
+  outline: none;
+  padding: 10px;
+  font-size: 25px;
+}

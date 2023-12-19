@@ -1,10 +1,11 @@
 import './App.css'
 
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 import Home from './components/Home'
 import Books from './components/Books'
 import Header from './components/Header'
 import AddBooks from './components/AddBooks'
+import NotFound from './components/NotFound'
 
 const App = () => (
   <div className="bg-dark">
@@ -13,6 +14,8 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/books" component={Books} />
       <Route exact path="/addbooks" component={AddBooks} />
+      <Route path="/not-found" component={NotFound} />
+      <Redirect to="/not-found" />
     </Switch>
   </div>
 )

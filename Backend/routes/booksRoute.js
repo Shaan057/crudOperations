@@ -53,7 +53,7 @@ router.put("/updateBook/:id", async (req, res) => {
             imageurl,
         });
         book = await book.save().then(() => {
-            res.status(200).json(book);
+            res.status(200).json({ message: "Book Updated Successfully" });
         });
     } catch (error) {
         console.log(error);
