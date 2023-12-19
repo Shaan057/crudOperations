@@ -8,7 +8,7 @@ app.use(cors());
 const port = process.env.PORT || 2000;
 
 // Connecting to database
-require("./connection/conn");
+require("./connection/db");
 
 // app.use(express.json());
 app.use(express.json());
@@ -21,5 +21,5 @@ app.use("/api/v1", bookRoute);
 // Starting the server
 
 app.listen(port, () => {
-    console.log(`Server Listening${port}`);
+    console.log(`Server Listening to ${port}`);
 });
