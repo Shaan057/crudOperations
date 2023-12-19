@@ -1,9 +1,12 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
+console.log(
+    process.env.MONGODB_URI,
+    "---------------MONGODB_URI----------------"
+);
 
 mongoose
-    .connect(
-        "mongodb+srv://roshansp639:Us2ivpsOun4II5u7@cluster0.q2jjitk.mongodb.net/crudoperations?retryWrites=true&w=majority"
-    )
+    .connect(process.env.MONGODB_URI)
     .then((res) => {
         console.log("Database Connected");
     })
