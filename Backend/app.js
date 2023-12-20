@@ -8,7 +8,7 @@ app.use(cors());
 const port = process.env.PORT || 2000;
 
 // Connecting to database
-require("./connection/db");
+require("./connection/conn");
 
 // app.use(express.json());
 app.use(express.json());

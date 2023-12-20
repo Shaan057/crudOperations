@@ -86,9 +86,8 @@ const Book = () => {
     fetchData()
   }
 
-  const onSubmitForm = async data => {
+  const onSubmitForm = async () => {
     try {
-      // const bookData = {bookname, description, price, author, imageurl}
       const url = `http://localhost:2000/api/v1/updateBookDetails/${editId}`
       const response = await axios.patch(url, {
         bookname,

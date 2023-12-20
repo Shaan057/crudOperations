@@ -39,7 +39,7 @@ const BookItem = props => {
   }
 
   return (
-    <li className="d-flex flex-column card text-dark book-item m-2">
+    <li className="d-flex flex-column text-dark book-item m-2">
       <img className="book-image" src={imageUrl} alt="book" />
       <div className="p-1">
         <h5 className="book-title">{bookName.slice(0, 15)}...</h5>
