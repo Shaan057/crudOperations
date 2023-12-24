@@ -22,7 +22,7 @@
     }
   ],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": 0,
     "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
     "react/state-in-constructor": "off",
     "react/react-in-jsx-scope": "off",

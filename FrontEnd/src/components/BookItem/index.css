@@ -80,3 +80,20 @@
 .confirm-button {
   align-self: center;
 }
+.book-detail-link {
+  text-decoration: none;
+  color: black;
+}
+.info-button {
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-icon {
+  color: green;
+  font-size: 28px;
+}

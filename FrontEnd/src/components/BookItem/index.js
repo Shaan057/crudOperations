@@ -1,4 +1,5 @@
 import './index.css'
+import {Link} from 'react-router-dom'
 
 const BookItem = props => {
   const {
@@ -40,7 +41,10 @@ const BookItem = props => {
 
   return (
     <li className="d-flex flex-column text-dark book-item m-2">
-      <img className="book-image" src={imageUrl} alt="book" />
+      <Link to={`/getBooks/${id}`} className="book-detail-link">
+        <img className="book-image" src={imageUrl} alt="book" />
+      </Link>
+
       <div className="p-1">
         <h5 className="book-title">{bookName.slice(0, 15)}...</h5>
         <p className="book-author">
