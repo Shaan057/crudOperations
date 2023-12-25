@@ -51,7 +51,7 @@ const BookItem = props => {
           By <span className="author-span">{author}</span>
         </p>
         <p className="book-description">{description.slice(0, 30)}...</p>
-        <p className="book-price">Rs {price}</p>
+        <p className="book-price">Rs {price} /-</p>
       </div>
       <div className="d-flex justify-content-between align-items-center p-1 mt-auto buttons-container">
         <button
