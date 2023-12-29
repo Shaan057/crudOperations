@@ -1,6 +1,8 @@
 import './index.css'
 import axios from 'axios'
+import Cookies from 'js-cookie'
 import {useState, useEffect} from 'react'
+import Header from '../Header'
 
 const BookDetails = props => {
   const {match} = props
@@ -10,9 +12,15 @@ const BookDetails = props => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const book = await axios.get(
-          `http://localhost:2000/api/v1/getBooks/${id}`,
-        )
+        const url = `http://localhost:2000/api/v1/getBooks/${id}`
+        const jwtToken = Cookies.get('jwt_token')
+        const options = {
+          headers: {
+            Authorization: `Bearer ${jwtToken}`,
+            'Content-Type': 'application/json',
+          },
+        }
+        const book = await axios.get(url, options)
         console.log(book)
       } catch (error) {
         console.log(error)
@@ -23,7 +31,12 @@ const BookDetails = props => {
 
   const [bookData, setBookData] = useState(null)
 
-  return <div>Book Details</div>
+  return (
+    <>
+      <Header />
+      <div>Book Details</div>
+    </>
+  )
 }
 
 export default BookDetails

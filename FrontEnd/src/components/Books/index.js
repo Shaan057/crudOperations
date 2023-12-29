@@ -3,8 +3,10 @@
 import {useEffect, useState} from 'react'
 import './index.css'
 import axios from 'axios'
+import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import BookItem from '../BookItem'
+import Header from '../Header'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -14,9 +16,15 @@ const apiStatusConstants = {
 }
 
 const Book = () => {
+  const jwtToken = Cookies.get('jwt_token')
+  const options = {
+    headers: {
+      Authorization: `Bearer ${jwtToken}`,
+      'Content-Type': 'application/json',
+    },
+  }
   const [booksList, setBooksList] = useState(null)
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial)
-
   const [bookname, setBookName] = useState('')
   const [description, setDescription] = useState('')
   const [price, setPrice] = useState('')
@@ -41,7 +49,8 @@ const Book = () => {
   const fetchData = async () => {
     setApiStatus(apiStatusConstants.inProgress)
     try {
-      const response = await axios.get('http://localhost:2000/api/v1/getBooks')
+      const url = 'http://localhost:2000/api/v1/getBooks'
+      const response = await axios.get(url, options)
       const {data} = response
       const books = data.books.map(each => formatData(each))
       setBooksList(books)
@@ -89,13 +98,14 @@ const Book = () => {
   const onSubmitForm = async () => {
     try {
       const url = `http://localhost:2000/api/v1/updateBookDetails/${editId}`
-      const response = await axios.patch(url, {
+      const bookObject = {
         bookname,
         description,
         price,
         author,
         imageurl,
-      })
+      }
+      const response = await axios.patch(url, bookObject, options)
       setBookUpdateStatus(response.data.message)
     } catch (error) {
       console.log(error.message)
@@ -109,7 +119,7 @@ const Book = () => {
   const onDeleteBook = async () => {
     try {
       const url = `http://localhost:2000/api/v1/deleteBook/${bookToBeDeletedId}`
-      const response = await axios.delete(url)
+      const response = await axios.delete(url, options)
       setBookDeleteStatus(response.data.message)
     } catch (error) {
       console.log(error)
@@ -184,10 +194,13 @@ const Book = () => {
   }
 
   return (
-    <div className="books-background container text-white">
-      <h3 className="mt-3">Books</h3>
-      {renderDishes()}
-    </div>
+    <>
+      <Header />
+      <div className="books-background container text-white">
+        <h3 className="mt-3">Books</h3>
+        {renderDishes()}
+      </div>
+    </>
   )
 }
 export default Book

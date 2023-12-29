@@ -1,0 +1,121 @@
+.Login-bg-container {
+  min-height: 100vh;
+  background-position: center;
+  background-color: black;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto';
+}
+
+.Login-website-logo-container {
+  padding: 25px;
+  height: 10vh;
+}
+
+.Login-website-image {
+  width: 100px;
+  height: 27px;
+}
+@media screen and (min-width: 768px) {
+  .Login-website-image {
+    width: 182px;
+    height: 52px;
+  }
+}
+.Login-form-container {
+  height: 90vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .Login-form {
+    width: 456px;
+  }
+}
+.Login-form {
+  border: 1px solid grey;
+  background-color: black;
+  border-radius: 8px;
+  padding: 20px;
+}
+.Login-login-text {
+  text-align: start;
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .Login-login-text {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Login-form {
+    width: 300px;
+  }
+}
+
+.Login-input-label {
+  color: white;
+}
+
+.Login-input {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border: none;
+  padding: 3px 5px;
+  font-size: 10px;
+  background-color: #333333;
+  color: white;
+  font-size: 17px;
+}
+
+.Login-login-button {
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.Login-signup-button {
+  margin-top: 10px;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.Login-error-msg {
+  color: #e50914;
+  margin: 0px;
+}
+
+.Login-input-password-container {
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+}
+
+.Login-show-hide-button {
+  color: grey;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+input.Login-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #333333 inset !important;
+  -webkit-text-fill-color: white !important;
+}
