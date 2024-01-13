@@ -47,11 +47,12 @@
 ### Resources
 
 <details>
-
+  
 <summary>Click to view</summary>
 
-> https://www.amazon.in/Books
-> https://www.goodreads.com/
+- https://www.amazon.in/Books
+
+- https://www.goodreads.com/
 
 </details>
 
