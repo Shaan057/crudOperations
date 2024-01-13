@@ -12,7 +12,7 @@ const BookDetails = props => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const url = `http://localhost:2000/api/v1/getBooks/${id}`
+        const url = `/api/v1/getBooks/${id}`
         const jwtToken = Cookies.get('jwt_token')
         const options = {
           headers: {
