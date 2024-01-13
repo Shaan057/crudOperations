@@ -2,6 +2,7 @@
   "name": "app-name",
   "private": true,
   "version": "1.0.0",
+  "proxy":"http://localhost:2000",
   "engines": {
     "node": ">=14",
     "npm": ">=6"
