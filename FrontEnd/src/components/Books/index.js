@@ -49,7 +49,7 @@ const Book = () => {
   const fetchData = async () => {
     setApiStatus(apiStatusConstants.inProgress)
     try {
-      const url = 'http://localhost:2000/api/v1/getBooks'
+      const url = '/api/v1/getBooks'
       const response = await axios.get(url, options)
       const {data} = response
       const books = data.books.map(each => formatData(each))
@@ -97,7 +97,7 @@ const Book = () => {
 
   const onSubmitForm = async () => {
     try {
-      const url = `http://localhost:2000/api/v1/updateBookDetails/${editId}`
+      const url = `/api/v1/updateBookDetails/${editId}`
       const bookObject = {
         bookname,
         description,
@@ -118,7 +118,7 @@ const Book = () => {
 
   const onDeleteBook = async () => {
     try {
-      const url = `http://localhost:2000/api/v1/deleteBook/${bookToBeDeletedId}`
+      const url = `/api/v1/deleteBook/${bookToBeDeletedId}`
       const response = await axios.delete(url, options)
       setBookDeleteStatus(response.data.message)
     } catch (error) {
