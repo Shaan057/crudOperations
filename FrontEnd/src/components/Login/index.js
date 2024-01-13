@@ -36,7 +36,7 @@ const Login = props => {
   const onSubmitForm = async event => {
     event.preventDefault()
     try {
-      const url = 'http://localhost:2000/api/v1/login'
+      const url = '/api/v1/login'
       const userData = {
         username,
         password,
