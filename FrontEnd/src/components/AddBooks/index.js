@@ -37,7 +37,7 @@ const AddBooks = () => {
   const onSubmitForm = async event => {
     event.preventDefault()
     try {
-      const url = 'http://localhost:2000/api/v1/add'
+      const url = 'api/v1/add'
       const jwtToken = Cookies.get('jwt_token')
       const options = {
         headers: {
