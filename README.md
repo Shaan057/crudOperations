@@ -44,9 +44,11 @@
 
 #### ![Logout](https://res.cloudinary.com/dx8csuvrh/image/upload/v1705162827/Books/Screenshot_438_efmhpu.png)
 
-### <details>
+### Resources
 
-<summary>Resources</summary>
+<details>
+
+<summary>Click to view</summary>
 
 > https://www.amazon.in/Books
 > https://www.goodreads.com/
