@@ -28,7 +28,7 @@ const Register = props => {
     event.preventDefault()
     try {
       if (userPassword === checkPassword) {
-        const url = 'http://localhost:2000/api/v1/register'
+        const url = '/api/v1/register'
         const userDetails = {
           username,
           userPassword,
