@@ -6,6 +6,7 @@ const booksSchema = new mongoose.Schema({
     price: { type: Number, required: true },
     author: { type: String, required: true },
     imageurl: { type: String, required: true },
+    category: { type: String, required: true },
 });
 
 module.exports = new mongoose.model("books", booksSchema);
