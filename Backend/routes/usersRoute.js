@@ -13,8 +13,12 @@ router.post('/register', async (req, res) => {
         const data = req.body;
         const { username, userPassword, email } = data
         const isUserPresent = await userModel.findOne({ username });
+        const isEmailUnique = await userModel.findOne({ email });
         if (isUserPresent) {
             throw new Error('user already registered')
+        }
+        if (isEmailUnique){
+            throw new Error('Email already taken')
         }
         const saltRounds = 10;
         const salt = await bcrypt.genSalt(saltRounds);
