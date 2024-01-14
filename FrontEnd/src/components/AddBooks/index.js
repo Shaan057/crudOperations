@@ -11,8 +11,9 @@ const AddBooks = () => {
     price: '',
     author: '',
     imageurl: '',
+    category: '',
   })
-  const {bookname, description, price, author, imageurl} = bookData
+  const {bookname, description, price, author, imageurl, category} = bookData
 
   const [responseMsg, setResponseMsg] = useState('')
   // const {bookname, description, price, author, imageurl} = booksData
@@ -61,6 +62,7 @@ const AddBooks = () => {
       price: '',
       author: '',
       imageurl: '',
+      category: '',
     })
     setResponseMsg('')
   }
@@ -133,6 +135,19 @@ const AddBooks = () => {
               name="imageurl"
               autoComplete="false"
               placeholder="Enter Book Url"
+              onChange={updateBookData}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="category">Category</label>
+            <input
+              type="text"
+              value={category}
+              className="form-control"
+              id="category"
+              name="category"
+              autoComplete="false"
+              placeholder="Enter Book Category"
               onChange={updateBookData}
             />
           </div>

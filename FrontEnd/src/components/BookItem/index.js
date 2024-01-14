@@ -11,6 +11,7 @@ const BookItem = props => {
     onChangePrice,
     onChangeAuthor,
     onChangeImageurl,
+    onChangeCategory,
     onSubmitted,
     onEditButtonClicked,
     onSubmitForm,
@@ -24,7 +25,7 @@ const BookItem = props => {
     onEditButtonClicked(data)
   }
 
-  const {id, bookName, description, price, author, imageUrl} = data
+  const {id, bookName, description, price, author, imageUrl, category} = data
 
   const onClickConfirmButton = async () => {
     onDeleteBook()
@@ -163,6 +164,20 @@ const BookItem = props => {
                         autoComplete="false"
                         placeholder="Enter Book Url"
                         onChange={onChangeImageurl}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label className="books-label" htmlFor="category">
+                        Category
+                      </label>
+                      <input
+                        type="text"
+                        value={updateDetails.category}
+                        className="form-control"
+                        id="description"
+                        placeholder="Enter Book Category"
+                        autoComplete="false"
+                        onChange={onChangeCategory}
                       />
                     </div>
                     <button type="submit" className="btn btn-success">

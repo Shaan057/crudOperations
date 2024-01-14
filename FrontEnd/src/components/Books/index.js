@@ -30,6 +30,7 @@ const Book = () => {
   const [price, setPrice] = useState('')
   const [author, setAuthor] = useState('')
   const [imageurl, setImageurl] = useState('')
+  const [category, setImageCategory] = useState('')
   const [editId, setId] = useState(null)
   const [bookUpdateStatus, setBookUpdateStatus] = useState('')
   const [bookDeleteStatus, setBookDeleteStatus] = useState('')
@@ -80,6 +81,9 @@ const Book = () => {
     setImageurl(event.target.value)
   }
 
+  const onChangeCategory = event => {
+    setImageCategory(event.target.value)
+  }
   const onSubmitted = () => {
     setBookName('')
     setDescription('')
@@ -104,6 +108,7 @@ const Book = () => {
         price,
         author,
         imageurl,
+        category,
       }
       const response = await axios.patch(url, bookObject, options)
       setBookUpdateStatus(response.data.message)
@@ -160,12 +165,14 @@ const Book = () => {
             price,
             author,
             imageurl,
+            category,
           }}
           onChangeBookName={onChangeBookName}
           onChangeDescription={onChangeDescription}
           onChangePrice={onChangePrice}
           onChangeAuthor={onChangeAuthor}
           onChangeImageurl={onChangeImageurl}
+          onChangeCategory={onChangeCategory}
           onSubmitted={onSubmitted}
           onEditButtonClicked={onEditButtonClicked}
           onSubmitForm={onSubmitForm}
