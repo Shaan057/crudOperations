@@ -34,7 +34,7 @@ const BookDetails = props => {
   return (
     <>
       <Header />
-      <div>Book Details</div>
+      <div>Book Details under progress</div>
     </>
   )
 }

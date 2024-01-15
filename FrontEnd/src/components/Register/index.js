@@ -6,6 +6,7 @@ import axios from 'axios'
 import {IoEyeOutline, IoEyeOffOutline} from 'react-icons/io5'
 
 const Register = props => {
+
   const {history} = props
   const [username, setUsername] = useState('')
   const [userPassword, setUserPassword] = useState('')
@@ -14,11 +15,6 @@ const Register = props => {
   const [errorMsg, setErrorMsg] = useState('')
   const [showHidePassword, setShowHidePassword] = useState(false)
   const [responseStatus, setResponseStatus] = useState('')
-
-  const onSubmitSuccess = jwtToken => {
-    Cookies.set('jwt_token', jwtToken, {expires: 30})
-    history.replace('/')
-  }
 
   const onClickSignupButton = () => {
     history.replace('/login')
@@ -43,6 +39,7 @@ const Register = props => {
       setErrorMsg(error.response.data.message)
     }
   }
+
   const updateUsername = event => {
     setUsername(event.target.value)
   }
@@ -95,7 +92,7 @@ const Register = props => {
                 id="email"
                 value={email}
                 className="input"
-                type="text"
+                type="email"
                 placeholder="email"
                 onChange={updateEmail}
                 required
@@ -140,16 +137,18 @@ const Register = props => {
               {errorMsg && <p className="error-msg">*{errorMsg}</p>}
             </div>
             <br />
-            <button type="submit" className="signup-button btn-success">
-              SignUp
-            </button>
-            <button
-              type="button"
-              className="signup-button mt-2 btn-info"
-              onClick={onClickSignupButton}
-            >
-              Login
-            </button>
+        
+              <button type="submit" className="signup-button btn-success">
+                SignUp
+              </button>
+              <button
+                type="button"
+                className="signup-button btn-info mt-2"
+                onClick={onClickSignupButton}
+              >
+                Login
+              </button>
+            
           </form>
         ) : (
           <div className="responseStatus-container">
