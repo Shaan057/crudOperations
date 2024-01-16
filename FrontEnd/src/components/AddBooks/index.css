@@ -1,5 +1,6 @@
 .addbooks-background {
-  min-height: 90.48vh;
+  padding-top: 60px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding-bottom: 15px;
