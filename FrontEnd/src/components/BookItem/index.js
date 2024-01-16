@@ -1,4 +1,5 @@
 import './index.css'
+import LazyLoad from 'react-lazy-load'
 import {Link} from 'react-router-dom'
 
 const BookItem = props => {
@@ -43,7 +44,9 @@ const BookItem = props => {
   return (
     <li className="d-flex flex-column text-dark book-item m-2">
       <Link to={`/getBooks/${id}`} className="book-detail-link">
-        <img className="book-image" src={imageUrl} alt="book" />
+        <LazyLoad height={260}>
+          <img className="book-image" src={imageUrl} alt="book" />
+        </LazyLoad>
       </Link>
 
       <div className="p-1">
