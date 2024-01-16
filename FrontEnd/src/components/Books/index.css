@@ -30,13 +30,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 90.48vh;
+  min-height: 100vh;
 }
 .failure-img {
   width: 90%;
 }
 @media screen and (min-width: 768px) {
   .failure-img {
-    width: 80%;
+    width: 60%;
   }
 }
