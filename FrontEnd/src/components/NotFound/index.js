@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 const NotFound = () => (
   <div className="bg-not-found">
-    <div className="card">
+    <div className="not-found-card">
       <p className="not-found-para">Something Went Wrong!!!</p>
       <Link to="/">
         <button className="not-found-button" type="button">

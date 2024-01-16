@@ -9,7 +9,7 @@ const Header = props => {
     history.replace('/login')
   }
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light header-nav">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light header-nav fixed-top">
       <Link className="navbar-brand text-success link-logo" to="/">
         Books
       </Link>

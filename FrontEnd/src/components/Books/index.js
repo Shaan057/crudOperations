@@ -30,13 +30,13 @@ const Book = () => {
   const [price, setPrice] = useState('')
   const [author, setAuthor] = useState('')
   const [imageurl, setImageurl] = useState('')
-  const [category, setImageCategory] = useState('')
+  const [category, setBookCategory] = useState('')
   const [editId, setId] = useState(null)
   const [bookUpdateStatus, setBookUpdateStatus] = useState('')
   const [bookDeleteStatus, setBookDeleteStatus] = useState('')
   const [bookToBeDeletedId, setBookToBeDeletedId] = useState('')
 
-  // const {bookname, description, price, author, imageurl} = booksData
+  // const {bookname, description, price, author, imageurl, category} = booksData
 
   const formatData = data => ({
     id: data._id,
@@ -45,6 +45,7 @@ const Book = () => {
     price: data.price,
     author: data.author,
     imageUrl: data.imageurl,
+    category: data.category,
   })
 
   const fetchData = async () => {
@@ -82,7 +83,7 @@ const Book = () => {
   }
 
   const onChangeCategory = event => {
-    setImageCategory(event.target.value)
+    setBookCategory(event.target.value)
   }
   const onSubmitted = () => {
     setBookName('')
@@ -90,6 +91,7 @@ const Book = () => {
     setPrice('')
     setAuthor('')
     setImageurl('')
+    setBookCategory('')
     fetchData()
   }
 
@@ -132,7 +134,7 @@ const Book = () => {
   }
 
   const onEditButtonClicked = data => {
-    // const {bookname, description, price, author, imageurl} = data
+    // const {bookname, description, price, author, imageurl,category} = data
     setBookUpdateStatus('')
     setId(data.id)
     setBookName(data.bookName)
@@ -140,6 +142,7 @@ const Book = () => {
     setPrice(data.price)
     setAuthor(data.author)
     setImageurl(data.imageUrl)
+    setBookCategory(data.category)
   }
 
   useEffect(() => {
@@ -185,7 +188,15 @@ const Book = () => {
     </ul>
   )
 
-  const renderFailureView = () => <div>failure</div>
+  const renderFailureView = () => (
+    <div className="failure-view">
+      <img
+        className="failure-img"
+        src="https://res.cloudinary.com/dx8csuvrh/image/upload/v1704527966/riseup/something_went_wrong_jng5l5.jpg"
+        alt="failure"
+      />
+    </div>
+  )
 
   const renderDishes = () => {
     switch (apiStatus) {
