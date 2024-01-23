@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
 import './index.css'
 import axios from 'axios'
 import Cookies from 'js-cookie'
@@ -53,7 +53,7 @@ const Book = () => {
     try {
       const url = '/api/v1/getBooks'
       const response = await axios.get(url, options)
-      const { data } = response
+      const {data} = response
       const books = data.books.map(each => formatData(each))
       setBooksList(books)
       setApiStatus(apiStatusConstants.success)
