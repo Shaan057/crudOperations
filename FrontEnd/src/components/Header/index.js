@@ -1,9 +1,9 @@
 import './index.css'
-import {Link, withRouter} from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 const Header = props => {
-  const {history} = props
+  const { history } = props
   const onLogout = () => {
     Cookies.remove('jwt_token')
     history.replace('/login')
@@ -28,24 +28,29 @@ const Header = props => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <Link className="nav-link disabled" to="/">
-              Comming Soon
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/">
+            <Link className="nav-link text-success" to="/">
               Home
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/books">
+            <Link className="nav-link text-success" to="/books">
               Books
             </Link>
           </li>
 
           <li className="nav-item">
-            <Link className="nav-link" to="/addbooks">
+            <Link className="nav-link text-success" to="/addbooks">
               Add Books
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link text-success" to="/">
+              Cart
+            </Link>
+          </li>
+          <li className="nav-item disabled">
+            <Link className="nav-link" to="/">
+              Comming soon
             </Link>
           </li>
           <li className="nav-item">
