@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import './index.css'
 
 const Footer = () => (
@@ -39,13 +41,13 @@ const Footer = () => (
           <div className="col-xl-4 col-lg-4 mb-50">
             <div className="footer-widget">
               <div className="footer-logo">
-                <a href="index.html">
+                <Link to="index.html">
                   <img
                     src="https://res.cloudinary.com/dx8csuvrh/image/upload/v1702964346/Books/Robinweatherall-Library-Books.256_dopnnh.png"
                     className="img-fluid"
                     alt="logo"
                   />
-                </a>
+                </Link>
               </div>
               <div className="footer-text">
                 <p>
@@ -56,15 +58,15 @@ const Footer = () => (
               </div>
               <div className="footer-social-icon">
                 <span className="text-success">Follow us</span>
-                <a href="/">
+                <Link to="/">
                   <i className="fab fa-facebook-f facebook-bg"> </i>
-                </a>
-                <a href="/">
+                </Link>
+                <Link to="/">
                   <i className="fab fa-twitter twitter-bg"> </i>{' '}
-                </a>
-                <a href="/">
+                </Link>
+                <Link to="/">
                   <i className="fab fa-google-plus-g google-bg"> </i>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -75,34 +77,34 @@ const Footer = () => (
               </div>
               <ul>
                 <li>
-                  <a href="/">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="/">about</a>
+                  <Link to="/">about</Link>
                 </li>
                 <li>
-                  <a href="/">services</a>
+                  <Link to="/">services</Link>
                 </li>
                 <li>
-                  <a href="/">portfolio</a>
+                  <Link to="/">portfolio</Link>
                 </li>
                 <li>
-                  <a href="/">Contact</a>
+                  <Link to="/">Contact</Link>
                 </li>
                 <li>
-                  <a href="/">About us</a>
+                  <Link to="/">About us</Link>
                 </li>
                 <li>
-                  <a href="/">Our Services</a>
+                  <Link to="/">Our Services</Link>
                 </li>
                 <li>
-                  <a href="/">Expert Team</a>
+                  <Link to="/">Expert Team</Link>
                 </li>
                 <li>
-                  <a href="/">Contact us</a>
+                  <Link to="/">Contact us</Link>
                 </li>
                 <li>
-                  <a href="/">Latest News</a>
+                  <Link to="/">Latest News</Link>
                 </li>
               </ul>
             </div>
@@ -147,19 +149,19 @@ const Footer = () => (
             <div className="footer-menu">
               <ul>
                 <li>
-                  <a href="/">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <a href="/">Terms</a>
+                  <Link to="/">Terms</Link>
                 </li>
                 <li>
-                  <a href="/">Privacy</a>
+                  <Link to="/">Privacy</Link>
                 </li>
                 <li>
-                  <a href="/">Policy</a>
+                  <Link to="/">Policy</Link>
                 </li>
                 <li>
-                  <a href="/">Contact</a>
+                  <Link to="/">Contact</Link>
                 </li>
               </ul>
             </div>
