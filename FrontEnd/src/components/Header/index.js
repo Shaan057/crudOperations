@@ -1,9 +1,9 @@
 import './index.css'
-import {Link, withRouter} from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 const Header = props => {
-  const {history} = props
+  const { history } = props
   const onLogout = () => {
     Cookies.remove('jwt_token')
     history.replace('/login')

@@ -1,5 +1,10 @@
 .link-logo {
   font-weight: bold;
 }
+
 .header-nav {
+}
+
+.modal-backdrop {
+    z-index: -1 !important;
 }
