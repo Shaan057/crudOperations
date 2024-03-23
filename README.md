@@ -1,11 +1,5 @@
 # Interactive Book Store
 
-
-## comming soon...
-
-
-### Snaps
-
 ### Desktop Views
 
 #### Register
