@@ -1,6 +1,6 @@
 import './index.css'
 import LazyLoad from 'react-lazy-load'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const BookItem = props => {
   const {
@@ -26,7 +26,7 @@ const BookItem = props => {
     onEditButtonClicked(data)
   }
 
-  const { id, bookName, description, price, author, imageUrl } = data
+  const {id, bookName, description, price, author, imageUrl} = data
 
   const onClickConfirmButton = async () => {
     onDeleteBook()

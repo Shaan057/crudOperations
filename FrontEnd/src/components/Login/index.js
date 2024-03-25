@@ -1,9 +1,9 @@
 import './index.css'
-import { useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import {useState} from 'react'
+import {Navigate, useNavigate} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import axios from 'axios'
-import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5'
+import {IoEyeOutline, IoEyeOffOutline} from 'react-icons/io5'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -14,12 +14,12 @@ const Login = () => {
   const [showHidePassword, setShowHidePassword] = useState(false)
 
   const onSubmitSuccess = jwtToken => {
-    Cookies.set('jwt_token', jwtToken, { expires: 30 })
-    navigate('/', { replace: true })
+    Cookies.set('jwt_token', jwtToken, {expires: 30})
+    navigate('/', {replace: true})
   }
 
   const onClickSignupButton = () => {
-    navigate('/register', { replace: true })
+    navigate('/register', {replace: true})
   }
 
   const onSubmitFailure = msg => {

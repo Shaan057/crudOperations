@@ -1,9 +1,9 @@
 import './index.css'
 import axios from 'axios'
 import Cookies from 'js-cookie'
-import { useState, useEffect } from 'react'
+import {useState, useEffect} from 'react'
 import Loader from 'react-loader-spinner'
-import { useParams } from 'react-router-dom';
+import {useParams} from 'react-router-dom'
 import Header from '../Header'
 
 const apiStatusConstants = {
@@ -16,8 +16,8 @@ const apiStatusConstants = {
 const BookDetails = () => {
   const [bookData, setBookData] = useState(null)
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial)
-  const { id } = useParams()
-  console.log(useParams());
+  const {id} = useParams()
+  console.log(useParams())
 
   useEffect(() => {
     const fetchBook = async () => {
@@ -32,7 +32,7 @@ const BookDetails = () => {
           },
         }
         const response = await axios.get(url, options)
-        const { book } = response.data
+        const {book} = response.data
         // console.log(book)
         setBookData(book)
         setApiStatus(apiStatusConstants.success)
@@ -45,7 +45,7 @@ const BookDetails = () => {
   }, [])
 
   const renderSuccessView = () => {
-    const { bookname, description, price, author, imageurl, category } = bookData
+    const {bookname, description, price, author, imageurl, category} = bookData
     return (
       <div className="book-details-container container p-2">
         <div className="book-details-card card center-text">

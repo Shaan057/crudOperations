@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 import './index.css'
 
@@ -116,8 +116,8 @@ const Footer = () => (
               </div>
               <div className="footer-text mb-25">
                 <p>
-                  Don&apos;t miss to subscribe to our new feeds, kindly fill the form
-                  below.
+                  Don&apos;t miss to subscribe to our new feeds, kindly fill the
+                  form below.
                 </p>
               </div>
               <div className="subscribe-form">
@@ -127,7 +127,7 @@ const Footer = () => (
                     type="email"
                     placeholder="Email Address"
                   />
-                  <button type='button'>
+                  <button type="button">
                     <i className="fab fa-telegram-plane"> </i>
                   </button>
                 </form>

@@ -1,9 +1,9 @@
 import './index.css'
-import { useState } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import {useState} from 'react'
+import {Navigate, useNavigate} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import axios from 'axios'
-import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5'
+import {IoEyeOutline, IoEyeOffOutline} from 'react-icons/io5'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -16,7 +16,7 @@ const Register = () => {
   const [responseStatus, setResponseStatus] = useState('')
 
   const onClickSignupButton = () => {
-    navigate('/login', { replace: true })
+    navigate('/login', {replace: true})
   }
 
   const onSubmitForm = async event => {
