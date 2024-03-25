@@ -1,27 +1,25 @@
 import './index.css'
-import {useState} from 'react'
-import {Redirect} from 'react-router-dom'
+import { useState } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
 import axios from 'axios'
-import {IoEyeOutline, IoEyeOffOutline} from 'react-icons/io5'
+import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5'
 
-const Login = props => {
-  const {history} = props
+const Login = () => {
+  const navigate = useNavigate()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [showErrorMsg, setShowErrorMsg] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
   const [showHidePassword, setShowHidePassword] = useState(false)
 
-  const userDetails = {username, password}
-
   const onSubmitSuccess = jwtToken => {
-    Cookies.set('jwt_token', jwtToken, {expires: 30})
-    history.replace('/')
+    Cookies.set('jwt_token', jwtToken, { expires: 30 })
+    navigate('/', { replace: true })
   }
 
   const onClickSignupButton = () => {
-    history.replace('/register')
+    navigate('/register', { replace: true })
   }
 
   const onSubmitFailure = msg => {
@@ -57,7 +55,7 @@ const Login = props => {
   }
   const jwtToken = Cookies.get('jwt_token')
   if (jwtToken !== undefined) {
-    return <Redirect to="/" />
+    return <Navigate to="/" replace />
   }
   return (
     <div className="Login-bg-container">

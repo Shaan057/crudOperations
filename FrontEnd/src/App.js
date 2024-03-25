@@ -1,5 +1,5 @@
 import './App.css'
-import {Switch, Route, Redirect} from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from './components/Home'
 import Books from './components/Books'
 import AddBooks from './components/AddBooks'
@@ -11,17 +11,17 @@ import Register from './components/Register'
 
 const App = () => (
   <div className="bg-dark">
-    <Switch>
-      <Route exact path="/register" component={Register} />
-      <Route exact path="/login" component={Login} />
-      <ProtectedRoute exact path="/" component={Home} />
-      <ProtectedRoute exact path="/books" component={Books} />
-      <ProtectedRoute exact path="/addbooks" component={AddBooks} />
-      <ProtectedRoute exact path="/getBooks/:id" component={BookDetails} />
-      <Route path="/not-found" component={NotFound} />
-      <Redirect to="/not-found" />
-    </Switch>
+    <Routes>
+      <Route exact path="/register" element={<Register />} />
+      <Route exact path="/login" element={<Login />} />
+      <Route path="/" element={<ProtectedRoute element={Home} />} />
+      <Route path="/books" element={<ProtectedRoute element={Books} />} />
+      <Route path="/addbooks" element={<ProtectedRoute element={AddBooks} />} />
+      <Route path="/getBooks/:id" element={<ProtectedRoute element={BookDetails} />} />
+      <Route path="/not-found" element={<NotFound />} />
+      <Route path="*" element={<Navigate to="/not-found" />} />
+    </Routes>
   </div>
-)
+);
 
-export default App
+export default App;

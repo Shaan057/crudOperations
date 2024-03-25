@@ -1,12 +1,12 @@
 import './index.css'
-import {useState} from 'react'
-import {Redirect} from 'react-router-dom'
+import { useState } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
 import axios from 'axios'
-import {IoEyeOutline, IoEyeOffOutline} from 'react-icons/io5'
+import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5'
 
-const Register = props => {
-  const {history} = props
+const Register = () => {
+  const navigate = useNavigate()
   const [username, setUsername] = useState('')
   const [userPassword, setUserPassword] = useState('')
   const [checkPassword, setCheckPassword] = useState('')
@@ -16,7 +16,7 @@ const Register = props => {
   const [responseStatus, setResponseStatus] = useState('')
 
   const onClickSignupButton = () => {
-    history.replace('/login')
+    navigate('/login', { replace: true })
   }
 
   const onSubmitForm = async event => {
@@ -60,7 +60,7 @@ const Register = props => {
 
   const jwtToken = Cookies.get('jwt_token')
   if (jwtToken !== undefined) {
-    return <Redirect to="/" />
+    return <Navigate to="/" replace />
   }
 
   return (
