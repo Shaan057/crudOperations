@@ -3,9 +3,6 @@ const userModel = require('../models/userModel')
 const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken')
 
-
-
-
 // Register User
 
 router.post('/register', async (req, res) => {
@@ -66,28 +63,3 @@ router.post('/login', async (req, res) => {
 
 
 module.exports = router;
-
-
-
-
-
-
-
-
-// const createUser = (username, hashedPassword) => {
-//     // Assuming you have a User model
-//     const User = require("./models/user"); // Adjust the path based on your project structure
-
-//     // Create a new user
-//     User.create({
-//         username,
-//         password: hashedPassword,
-//         // Add additional user properties as needed
-//     })
-//         .then((user) => {
-//             console.log("User created:", user);
-//         })
-//         .catch((error) => {
-//             console.error("Error creating user:", error);
-//         });
-// };
