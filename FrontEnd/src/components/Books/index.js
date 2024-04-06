@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react'
 import './index.css'
 import axios from 'axios'
 import Cookies from 'js-cookie'
-import Loader from 'react-loader-spinner'
+import {TailSpin} from 'react-loader-spinner'
 import BookItem from '../BookItem'
 import Header from '../Header'
 
@@ -151,7 +151,7 @@ const Book = () => {
 
   const renderLoadingView = () => (
     <div className="loader-container">
-      <Loader type="TailSpin" color="white" height="50" width="50" />
+      <TailSpin color="white" height="50" width="50" />
     </div>
   )
   const renderSuccessView = () => (
