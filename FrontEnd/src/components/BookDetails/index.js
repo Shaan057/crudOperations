@@ -2,7 +2,7 @@ import './index.css'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import {useState, useEffect} from 'react'
-import Loader from 'react-loader-spinner'
+import {TailSpin} from 'react-loader-spinner'
 import {useParams} from 'react-router-dom'
 import Header from '../Header'
 
@@ -79,7 +79,7 @@ const BookDetails = () => {
 
   const renderLoadingView = () => (
     <div className="loader-container">
-      <Loader type="TailSpin" color="white" height="50" width="50" />
+      <TailSpin color="white" height="50" width="50" />
     </div>
   )
 
